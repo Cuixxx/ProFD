@@ -16,11 +16,11 @@
 Make sure [conda](https://www.anaconda.com/distribution/) is installed.
 
     # clone this repository
-    git clone https://github.com/VlSomers/bpbreid
+    git clone https://github.com/Cuixxx/ProFD.git
 
     # create conda environment
-    cd bpbreid/ # enter project folder
-    conda create --name bpbreid python=3.10
+    cd ProFD/ # enter project folder
+    conda create --name profd python=3.10
     conda activate profd
     
     # install dependencies
