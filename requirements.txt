@@ -1,0 +1,28 @@
+# pip install -r requirements.txt
+
+# base torchreid ----------------------------------------
+numpy
+Cython
+h5py
+Pillow
+six
+scipy
+opencv-python
+matplotlib
+tb-nightly
+future
+yacs
+gdown
+flake8
+yapf
+isort
+
+# added for bpbreid
+albumentations
+pandas
+tabulate
+deepdiff
+wandb
+monai
+torchmetrics==0.10.3
+

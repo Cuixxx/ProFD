@@ -1,0 +1,32 @@
+data:
+  root: '/huangsiteng/ReID_datasets'
+  sources: ['market1501']
+  targets: ['market1501']
+  height: 256
+  width: 128
+  transforms: [ 'rf', 'rc', 're' ]
+  norm_mean: [ 0.5, 0.5, 0.5 ]
+  norm_std: [ 0.5, 0.5, 0.5 ]
+
+model:
+  name: 'clipreid_bpb'
+#  load_weights: '/huangsiteng/bpbreid/logs/605198288/2024_01_15_09_13_53_13S09b8384c-82fd-4510-9934-d56a212ea014model/job-605198288_60_model.pth.tar'
+  load_weights: '/huangsiteng/bpbreid/logs/151934125/2024_03_15_06_57_53_57Sb87ed3b4-6304-49d7-ab02-205e01c14b0emodel/job-151934125_60_model.pth.tar'
+  load_config: True
+  bpbreid:
+    mask_filtering_training: False
+    mask_filtering_testing: True
+    learnable_attention_enabled: True
+    backbone: 'ViT-B-16'
+    test_embeddings: ['bn_globl', 'bn_parts']
+    masks:
+      dir: 'pifpaf_maskrcnn_filtering'
+      preprocess: 'five_v'
+    stride_size: [ 16, 16 ]
+    upsample: True
+    SIE_COE : 0.0
+
+test:
+  evaluate: True
+  batch_size: 64
+  visrank: True

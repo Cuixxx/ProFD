@@ -1,0 +1,61 @@
+data:
+  root: '/huangsiteng/ReID_datasets'
+  sources: ['market1501']
+  targets: ['market1501']
+  height: 256
+  width: 128
+#  transforms: ['rf', 'rc', 're']
+  transforms: ['rc', 're']
+#  norm_mean: [ 0.5, 0.5, 0.5 ]
+#  norm_std: [ 0.5, 0.5, 0.5 ]
+
+model:
+  name: 'clipreid_reg'
+  bpbreid:
+    mask_filtering_training: False
+    mask_filtering_testing: True
+    learnable_attention_enabled: True
+    backbone: 'ViT-B-16'
+    test_embeddings: ['bn_foreg', 'parts']
+    masks:
+      dir: 'pifpaf_maskrcnn_filtering'
+      preprocess: 'five_v'
+    stride_size: [16, 16]
+    upsample: True
+
+loss:
+  name: 'part_based'
+  part_based:
+    name: 'part_averaged_triplet_loss'
+    ppl: 'cl'
+    weights:  # SOTA weights for GiLt loss
+      globl:
+        id: 1.
+        tr: 0.
+      foreg:
+        id: 1.
+        tr: 1.
+      conct:
+        id: 1.
+        tr: 0.
+      parts:
+        id: 0.
+        tr: 1.
+      pixls:
+        ce: 0.35
+
+train:
+  max_epoch: 60
+  batch_size: 64
+  lr: 0.00035
+  weight_decay: 0.0001
+  stepsize: [30, 50]
+#  seed: 1234
+  staged_lr: True
+#  base_lr_mult: 0.1
+  new_layers: ['image_encoder']
+
+test:
+  evaluate: False
+  batch_size: 64
+  visrank: True

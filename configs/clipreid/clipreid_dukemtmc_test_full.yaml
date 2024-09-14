@@ -1,0 +1,32 @@
+data:
+  root: '/huangsiteng/ReID_datasets/dukemtmcreid'
+  sources: ['dukemtmcreid']
+  targets: ['dukemtmcreid']
+  height: 256
+  width: 128
+  transforms: [ 'rf', 'rc', 're' ]
+  norm_mean: [ 0.5, 0.5, 0.5 ]
+  norm_std: [ 0.5, 0.5, 0.5 ]
+
+model:
+  name: 'clipreid_bpb'
+#  load_weights: '/huangsiteng/bpbreid/logs/605198288/2024_01_15_09_13_53_13S09b8384c-82fd-4510-9934-d56a212ea014model/job-605198288_60_model.pth.tar'
+  load_weights: '/huangsiteng/bpbreid/logs/563621504/2024_04_03_13_12_46_12S6a64ba81-f4c2-473a-aecf-b42e61ea55a3model/job-563621504_60_model.pth.tar'
+  load_config: True
+  bpbreid:
+    mask_filtering_training: False
+    mask_filtering_testing: True
+    learnable_attention_enabled: True
+    backbone: 'ViT-B-16'
+    test_embeddings: ['bn_globl', 'bn_parts']
+    masks:
+      dir: 'pifpaf_maskrcnn_filtering'
+      preprocess: 'five_v'
+    stride_size: [ 16, 16 ]
+    upsample: True
+    SIE_COE : 0.0
+
+test:
+  evaluate: True
+  batch_size: 64
+  visrank: True
