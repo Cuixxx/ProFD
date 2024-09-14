@@ -8,22 +8,6 @@
 
 [[Paper](https://openreview.net/pdf?id=o2axlPlXYY)] [[Video]] [[Poster]]
 
-### State-of-the-art performance on 5 datasets:
-
-Occluded-Duke: [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/body-part-based-representation-learning-for/person-re-identification-on-occluded-dukemtmc)](https://paperswithcode.com/sota/person-re-identification-on-occluded-dukemtmc?p=body-part-based-representation-learning-for)
-
-Occluded ReID: [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/body-part-based-representation-learning-for/person-re-identification-on-occluded-reid-1)](https://paperswithcode.com/sota/person-re-identification-on-occluded-reid-1?p=body-part-based-representation-learning-for)
-
-P-DukeMTMC: [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/body-part-based-representation-learning-for/person-re-identification-on-p-dukemtmc-reid)](https://paperswithcode.com/sota/person-re-identification-on-p-dukemtmc-reid?p=body-part-based-representation-learning-for)
-
-DukeMTMC-ReID: [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/body-part-based-representation-learning-for/person-re-identification-on-dukemtmc-reid)](https://paperswithcode.com/sota/person-re-identification-on-dukemtmc-reid?p=body-part-based-representation-learning-for)
-
-Market1501: [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/body-part-based-representation-learning-for/person-re-identification-on-market-1501)](https://paperswithcode.com/sota/person-re-identification-on-market-1501?p=body-part-based-representation-learning-for)
-
-&nbsp;
-<p align="center"><img src="/docs/figures/bpbreid/part_based_reid_methods.png" width="860"></p>
-&nbsp;
-
 ## News
 - [2024.09.14] We release the first version of our codebase. Please update frequently as we will add more documentation during the next few weeks.
 
