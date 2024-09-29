@@ -2,9 +2,9 @@
 
 -->
 
-# ProFD: Prompt-Guided Feature Disentangling for Occluded Person Re-Identification
+# ProFD: Prompt-Guided Feature Disentangling for Occluded Person Re-Identification (Official Edition)
 
-**A strong baseline for body part-based person re-identification** 
+**A strong baseline for Occluded person re-identification** 
 
 [[Paper](https://openreview.net/pdf?id=o2axlPlXYY)] [[Video]] [[Poster]]
 
